@@ -15,6 +15,7 @@ body {
     line-height: 1;
     font-family: sans-serif;
 }
+/*put in flex box aligned center of eachother adds background color and text color*/
 .header {
     display: flex;
     align-items: center;
@@ -23,27 +24,25 @@ body {
     background-color: #BB09E2;
     color: #ffffff;
 }
-
-
-
+/*flex box for the main header and profile img*/
 .profile {
     display: flex;
     align-items: center;
     margin-left: 10px;
 }
-  
+/*font size*/  
 .header h1 {
     font-size: 45px;
     margin: 0;
 }
-  
+/*size and shape of img*/  
 .header img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     margin-left: 10px;
 }
-  
+/*list displayed inline on further right*/  
 nav ul {
     display: flex;
     align-items: center;
@@ -54,21 +53,21 @@ nav ul {
     list-style: none;
     padding: 0;
 }
-  
+/*pushed right*/  
 nav ul li {
     margin-left: 10px;
 }
-  
+/*changes link color and gives no decoration*/ 
 nav ul li a {
     text-decoration: none;
     color: #ffffff;
 }
-
+/*makes border for sections and spaces them out*/
 div .section{
     border: 5px solid #BB09E2;
     margin: 5px 5px 5px 5px;
 }
-
+/*h2 sixe font color and bckground color and lined up with eachother */
 .second-head {
     display: inline-block;
     font-size: 35px;
@@ -79,14 +78,16 @@ div .section{
     background-color: #BB09E2;
     box-sizing: border-box;
 }
-
+/*puts imgs in flexbox*/
 .img-work {
     display: flex;
     flex-wrap: wrap;
 }
+/*gets rid of bug of bottom padding being there between border and img*/
 .img-work > div img{
     display: block;
 }
+/*sets size for img and puts a border around the img*/
 .img-work > div {
     position: relative;
     flex-basis: 33.33%;
@@ -95,25 +96,25 @@ div .section{
     border: 5px solid #BB09E2;
     box-sizing: border-box;
 }
-
+/*first img being made larger*/
 .img-work > div:first-child {
     flex-basis: 100%;
     margin-bottom: 0px;
     margin-top: 30px;
 }
-
+/*img scaled to border*/
 .img-work .first-image img {
     width: 100%;
     height: auto;
     object-fit: cover;
 }
-
+/*img scaled to border*/
 .img-work .rest-image-link img {
     width: 100%;
     height: auto;
     object-fit: cover;
 }
-
+/*adds overlay that cant be seen*/
 .img-work > div .overlay {
     position: absolute;
     top: 0;
@@ -125,15 +126,15 @@ div .section{
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-
+/*once mouse over overlay shows*/
 .img-work > div:hover .overlay {
     opacity: 1;
 }
-
+/*a glow around border onced clicked or hover over*/
 .img-work > div a img:hover {
     box-shadow: 0 0 10px 10px rgba(187, 9, 226, 0.7);
 }
-
+/*made into a flex row*/
 .section ul {
     display: flex;
     flex-direction: row;
@@ -141,29 +142,102 @@ div .section{
     padding: 0;
     
 }
-  
+  /*distance of the border */
 .section li {
     padding: 5px;
     margin-right: 20px;
     border-top: 5px solid #BB09E2;
     border-right: 5px solid #BB09E2;
 }
-
+/*the borde to appear for the github li*/
 .section .github {
     border-left: 5px solid #BB09E2;
 }
-
+/*what the bold text look like*/
 strong {
     background-color: #BB09E2;
     color: #ffffff;
     margin-left: -5px;
 }
-
-/* matches the font of special elements to the rest of the page*/
-input, select, option, optgroup, textarea, button, pre, code {
-    font-size: 100%;
-    font-family: inherit;
+/*resize to a screen width of 768px*/
+@media (max-width: 768px) {
+    .header {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+/*how far down from the top*/
+    .header-content {
+        margin-top: 20px;
+    }
+/*kept the name and pic in a row */
+    .profile {
+        flex-direction: row;
+        align-items: flex-start;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+/*size of name  and distance from top and left*/
+    .header h1 {
+        font-size: 30px;
+        margin-top: 10px;
+        padding-left: 5px;
+    }
+/*size of the img */
+    .header img {
+        width: 80px;
+        height: 80px;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+/*how the navagation lists flex and its distance*/
+    nav ul {
+        justify-content: flex-start;
+        margin-left: 0;
+        margin-right: 0;
+    }
+/*how far the lists are from there border*/
+    nav ul li {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+/*what the img in work look like*/    
+    .img-work > div {
+        flex-basis: 50%;
+    }
+/*what the first distance from next element*/
+    .img-work > div:first-child {
+        margin-top: 10px;
+    }
+/*how tall the first image is*/    
+    .img-work .first-image img {
+        height: 200px;
+    }
+/*the size for the rest of the rest of the imgs*/    
+    .img-work .rest-image-link img {
+        height: 150px;
+    }
+/*when the lists stacks*/    
+    .section ul {
+        flex-direction: column;
+    }
+/*the contact list*/    
+    .section li {
+        margin-right: 10px;
+    }
+/*how far from the border*/    
+    .section li {
+        margin-bottom: 10px;
+        border: none;
+        padding: 0;
+    }
+/*background of the bold words color and text color how far from the border*/
+    strong {
+        background-color: #BB09E2;
+        color: #ffffff;
+        margin-left: -2px;
+    }
+/*rid of border on all sides*/
+    .section .github {
+        border: 0;
+    }
 }
-
-/* removes default bullet points from lists */
-
