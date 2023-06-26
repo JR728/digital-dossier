@@ -176,29 +176,33 @@ strong {
         margin-left: 0;
         margin-bottom: 10px;
     }
-/*size of name  and distance from top and left*/
+/*size of name  and distance from top and left and width of content*/
     .header h1 {
         font-size: 30px;
         margin-top: 10px;
         padding-left: 5px;
+        padding-right: 0;
+        max-width: 120px;
     }
 /*size of the img */
     .header img {
         width: 80px;
         height: 80px;
-        margin-left: 0;
         margin-top: 10px;
     }
 /*how the navagation lists flex and its distance*/
     nav ul {
-        justify-content: flex-start;
+        justify-content: flexstart;
+        flex-direction: column;
         margin-left: 0;
         margin-right: 0;
+        box-sizing: border-box
     }
 /*how far the lists are from there border*/
     nav ul li {
         margin-left: 0;
         margin-right: 10px;
+        font-size: 20px;
     }
 /*what the img in work look like*/    
     .img-work > div {
