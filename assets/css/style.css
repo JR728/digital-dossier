@@ -98,7 +98,7 @@ div .section{
 }
 /*first img being made larger*/
 .img-work > div:first-child {
-    flex-basis: 100%;
+    flex-basis: 67.40%;
     margin-bottom: 0px;
     margin-top: 30px;
 }
